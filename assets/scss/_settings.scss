@@ -114,6 +114,11 @@ a {
   background: transparent;
   text-decoration: none;
   display: inline-block;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  &:hover {
+    background: #4b62c7;
+  }
 }
 /* change colours to suit your needs */
 ins {

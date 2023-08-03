@@ -215,6 +215,11 @@ header {
         background: #1c37b0;
         border: none;
         outline: none;
+        transition: all 0.3s ease;
+
+        &:hover {
+          background: #4b62c7;
+        }
       }
     }
   }
@@ -443,6 +448,10 @@ header {
       line-height: normal;
       border-radius: 60px;
       background: #1c37b0;
+      transition: all 0.3s ease;
+      &:hover {
+        background: #4b62c7;
+      }
     }
   }
 }
@@ -931,6 +940,10 @@ header {
       line-height: normal;
       border-radius: 60px;
       background: #1c37b0;
+      transition: all 0.3s ease;
+      &:hover {
+        background: #4b62c7;
+      }
     }
   }
 }
@@ -1271,6 +1284,10 @@ footer {
         text-align: center;
         outline: none;
         border: none;
+        transition: all 0.3s ease;
+        &:hover {
+          background: #4b62c7;
+        }
       }
     }
   }

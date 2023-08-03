@@ -1,9 +1,11 @@
 @import "_settings.scss"; // Asosiy sozlamalar
 
 // Pages
-@import "_index.scss"; 
-@import "_partner.scss"; 
-@import "_driver.scss"; 
-@import "_404.scss"; 
+@import "_index.scss";
+@import "_partner.scss";
+@import "_driver.scss";
+@import "_404.scss";
 
 @import "_media.scss"; // responsive ekranlar uchun oraliqlar
+
+@import url(https://fonts.googleapis.com/css?family=Golos+Text:regular,500,600,700,800,900);

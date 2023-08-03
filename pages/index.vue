@@ -138,7 +138,7 @@
                 </div>
               </div>
             </SwiperSlide>
-            <SwiperSlide>
+            <SwiperSlide >
               <div class="swiper-slide">
                 <!--  -->
                 <div class="advice_location">
@@ -148,8 +148,8 @@
                   <div class="location_img">
                     <img src="../assets/images/advice_location.png" alt="" />
                   </div>
-                  <div class="location_button">
-                    <a href="#">Получить инструкцию</a>
+                  <div @click="openInstructionModal" class="location_button">
+                    <a>Получить инструкцию</a>
                   </div>
                 </div>
               </div>
@@ -191,7 +191,7 @@
             <img src="../assets/images/advice_location.png" alt="" />
           </div>
           <div class="location_button">
-            <a href="#">Получить инструкцию</a>
+            <a  @click="openInstructionModal">Получить инструкцию</a>
           </div>
         </div>
       </div>
@@ -245,7 +245,7 @@
                 <span>предложения</span>
               </p>
               <div class="service_arrow">
-                <a href="#" class="service_btn">Получить КП</a>
+                <a @click="openKPModal" class="service_btn">Получить КП</a>
                 <div class="service_top_arrow">
                   <img src="../assets/images/service_arrow.svg" alt="" />
                 </div>
@@ -402,7 +402,9 @@
               <p class="location_txt">
                 Получить инструкцию по открытию в вашем городе таксопарка
               </p>
-              <a href="#" class="location_btn">Получить инструкцию</a>
+              <a @click="openInstructionModal" class="location_btn"
+                >Получить инструкцию</a
+              >
             </div>
           </div>
         </div>
@@ -458,7 +460,9 @@
               <p class="location_txt">
                 Получить инструкцию по открытию в вашем городе таксопарка
               </p>
-              <a href="#" class="location_btn">Получить инструкцию</a>
+              <a @click="openInstructionModal" class="location_btn"
+                >Получить инструкцию</a
+              >
             </div>
           </div>
         </div>
@@ -975,4 +979,50 @@
       </div>
     </div>
   </section>
+  <ModalForm
+    v-if="isModalOpen"
+    :title="modalTitle"
+    :text="modalText"
+    :inputs="modalInputs"
+    @submit="handleModalSubmit" />
 </template>
+<script setup>
+import { ref } from "vue";
+
+const isModalOpen = ref(false);
+const modalTitle = ref("");
+const modalText = ref("");
+const modalInputs = ref([]);
+
+const openKPModal = () => {
+  isModalOpen.value = true;
+  modalTitle.value = "Получить КП";
+
+  modalText.value = "Заполните форму, и мы отправим вам КП в течение часа";
+  modalInputs.value = [
+    { placeholder: "Имя", value: "" },
+    { placeholder: "Телефон", value: "" },
+    { placeholder: "Почта", value: "" },
+  ];
+};
+
+const openInstructionModal = () => {
+  console.log("hi");
+  isModalOpen.value = true;
+  modalTitle.value = "Получить инструкцию";
+  modalText.value =
+    "Заполните форму, и мы отправим вам инструкцию в течение часа";
+
+  modalInputs.value = [
+    { placeholder: "Имя", value: "" },
+    { placeholder: "Телефон", value: "" },
+  ];
+};
+
+const handleModalSubmit = (values) => {
+  console.log(values);
+  // Обработка данных из модального окна (values)
+  // Закрытие модального окна
+  isModalOpen.value = false;
+};
+</script>

@@ -443,7 +443,6 @@
                 </div></div
             ></SwiperSlide>
 
-            <!-- useSwiper() within a swiper instance -->
             <SwiperControls />
           </Swiper>
         </div>

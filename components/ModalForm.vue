@@ -1,5 +1,5 @@
 <template>
-  <div class="modal-overlay">
+  <div class="moedal-overlay">
     <div class="modal-form">
       <div class="modal-content">
         <h2>{{ title }}</h2>
@@ -42,20 +42,7 @@ const submit = () => {
 </script>
 
 <style lang="scss">
-.modal-overlay {
-  z-index: 11;
-  position: fixed;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100%;
-  backdrop-filter: blur(7px); /* Добавляем размытие */
 
-  background-color: rgba(255, 255, 255, 0.1);
-  display: flex;
-  justify-content: center;
-  align-items: center;
-}
 
 .modal-form {
   margin: 0 20px;

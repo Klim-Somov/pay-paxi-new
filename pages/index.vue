@@ -387,7 +387,7 @@
       <div class="platform_block">
         <div class="platform_top">
           <p class="platform_number">01</p>
-          <p class="platform_desc">Создадите сайт и настроите рекламу</p>
+          <p class="platform_desc">Создадите сайт и настройте рекламу</p>
         </div>
         <div class="platform_body">
           <div class="grey_block">

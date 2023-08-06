@@ -1,7 +1,7 @@
 // https://nuxt.com/docs/api/configuration/nuxt-config
 export default defineNuxtConfig({
   css: ["@/assets/scss/main.scss"],
-  modules: ["nuxt-swiper"],
+  modules: ["nuxt-swiper", "nuxt-csurf"],
 
   app: {
     head: {
@@ -20,6 +20,25 @@ export default defineNuxtConfig({
           src: "https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/js/bootstrap.bundle.min.js",
         },
       ],
+    },
+  },
+
+  csurf: {
+    cookie: {
+      path: "/",
+      httpOnly: true,
+      sameSite: "strict",
+    },
+    methodsToProtect: ["POST", "PUT", "PATCH"],
+    encryptAlgorithm: "aes-256-cbc",
+  },
+  runtimeConfig: {
+    mailport: 25,
+    mailhost: "smtp",
+    mailfrom: "info@paytaxi.ru",
+    public: {
+      site: "",
+      phone: "",
     },
   },
 });

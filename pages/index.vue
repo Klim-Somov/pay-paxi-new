@@ -983,7 +983,6 @@
   </section>
   <Success v-if="succes" />
   <ModalForm
-    @close="closeModal"
     v-if="isModalOpen"
     :title="modalTitle"
     :text="modalText"
@@ -993,13 +992,6 @@
 <script setup>
 import { ref } from "vue";
 
-onMounted(() => {
-  document.addEventListener("click", closeModal);
-});
-
-const beforeUnmount = () => {
-  document.removeEventListener("click", closeForm);
-};
 
 const isModalOpen = ref(false);
 const modalTitle = ref("");
@@ -1007,11 +999,7 @@ const modalText = ref("");
 const modalInputs = ref([]);
 const succes = ref(false);
 
-const closeModal = (event) => {
-  if (!$refs.formContainer.contains(event.target)) {
-    isModalOpen.value = false;
-  }
-};
+
 const openKPModal = () => {
   isModalOpen.value = true;
   modalTitle.value = "Получить КП";

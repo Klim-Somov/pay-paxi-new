@@ -269,7 +269,7 @@
         </div>
       </div>
       <div class="secret_button">
-        <a href="#">Бесплатный доступ</a>
+        <a @click="openKPModal">Бесплатный доступ</a>
       </div>
     </div>
   </section>
@@ -305,7 +305,7 @@
             <div class="tarif_bottom">
               <p class="tarif_price">Бесплатно</p>
               <div class="tarif_btn">
-                <a href="#">Выбрать</a>
+                <a @click="openKPModal">Выбрать</a>
               </div>
             </div>
           </div>
@@ -321,7 +321,7 @@
             <div class="tarif_bottom">
               <p class="tarif_price">6 000 руб/мес</p>
               <div class="tarif_btn">
-                <a href="#">Выбрать</a>
+                <a @click="openKPModal">Выбрать</a>
               </div>
             </div>
           </div>
@@ -338,7 +338,7 @@
             <div class="tarif_bottom">
               <p class="tarif_price">10 000 руб/мес</p>
               <div class="tarif_btn">
-                <a href="#">Выбрать</a>
+                <a @click="openKPModal">Выбрать</a>
               </div>
             </div>
           </div>
@@ -354,7 +354,7 @@
             <div class="tarif_bottom">
               <p class="tarif_price">50 000 руб/мес</p>
               <div class="tarif_btn">
-                <a href="#">Выбрать</a>
+                <a @click="openKPModal">Выбрать</a>
               </div>
             </div>
           </div>
@@ -491,5 +491,54 @@
           aria-atomic="true"></span>
       </div>
     </div>
+    <Success v-if="succes" />
+    <ModalForm
+      @close="closeModal"
+      v-if="isModalOpen"
+      :title="modalTitle"
+      :text="modalText"
+      :inputs="modalInputs"
+      @submit="handleModalSubmit" />
   </section>
 </template>
+<script setup>
+import { ref } from "vue";
+
+const isModalOpen = ref(false);
+const modalTitle = ref("");
+const modalText = ref("");
+const modalInputs = ref([]);
+const succes = ref(false);
+
+const openKPModal = () => {
+  isModalOpen.value = true;
+  modalTitle.value = "Получить КП";
+  modalText.value = "Заполните форму, и мы отправим вам КП в течение часа";
+  modalInputs.value = [
+    { placeholder: "Имя", value: "" },
+    { placeholder: "Телефон", value: "" },
+    { placeholder: "Почта", value: "" },
+  ];
+};
+
+const openInstructionModal = () => {
+  isModalOpen.value = true;
+  modalTitle.value = "Получить инструкцию";
+  modalText.value =
+    "Заполните форму, и мы отправим вам инструкцию в течение часа";
+
+  modalInputs.value = [
+    { placeholder: "Имя", value: "" },
+    { placeholder: "Телефон", value: "" },
+  ];
+};
+
+const handleModalSubmit = (values) => {
+  console.log(values);
+  succes.value = true;
+  setTimeout(() => {
+    succes.value = false;
+  }, 3500);
+  isModalOpen.value = false;
+};
+</script>

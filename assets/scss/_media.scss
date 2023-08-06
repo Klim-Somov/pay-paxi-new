@@ -442,6 +442,7 @@
     &.active {
       height: 630px;
       right: 0;
+      margin: 10px;
     }
   }
   .about .about_block {
@@ -1225,7 +1226,7 @@
     border-radius: 0px 0px 30px 30px;
   }
   header .header_menus.active {
-    width: 100%;
+    width: 95%;
     height: 546px;
   }
   .service_img img {

@@ -11,70 +11,73 @@
                 <img src="../assets/images/logo.svg" alt="" />
               </NuxtLink>
             </div>
-
-            <ul :class="{ active: isMenu }" class="header_menus">
-              <li>
-                <NuxtLink @click="isMenu = false" to="/partners"
-                  >Партнерам</NuxtLink
-                >
-              </li>
-              <li>
-                <NuxtLink @click="isMenu = false" to="/">Тарифы</NuxtLink>
-              </li>
-              <li>
-                <NuxtLink @click="isMenu = false" to="/">CRM PayTaxi</NuxtLink>
-              </li>
-              <li>
-                <NuxtLink @click="isMenu = false" to="/drivers"
-                  >Водителям</NuxtLink
-                >
-              </li>
-              <li>
-                <NuxtLink @click="isMenu = false" to="/">Контакты</NuxtLink>
-              </li>
-              <div class="header_phone d-lg-none">
-                <a @click="menuToggle" class="closer">
-                  <i class="fa-solid fa-xmark"></i>
-                  X
-                </a>
-                <a href="tel:+78002225756">+7 (800) 222 57-56</a>
-              </div>
-              <div class="header_phone d-lg-none">
-                <a href="mailto:info@paytaxi.ru">info@paytaxi.ru</a>
-              </div>
-              <li class="d-lg-none">
-                <div class="driver_apps extra_apps-menu">
-                  <!--  -->
-                  <div class="extra_item-menu">
-                    <div class="extra_img">
-                      <img src="../assets/images/app_gallery.svg" alt="" />
-                    </div>
-                    <p class="extra_title">App Gallery</p>
-                  </div>
-                  <!--  -->
-                  <div class="extra_item-menu">
-                    <div class="extra_img">
-                      <img src="../assets/images/app_store.svg" alt="" />
-                    </div>
-                    <p class="extra_title">App store</p>
-                  </div>
-                  <!--  -->
-                  <div class="extra_item-menu">
-                    <div class="extra_img">
-                      <img src="../assets/images/google_play.svg" alt="" />
-                    </div>
-                    <p class="extra_title">Google play</p>
-                  </div>
+            <div :class="{ 'modal-overlay': isMenu }">
+              <ul :class="{ active: isMenu }" class="header_menus">
+                <li>
+                  <NuxtLink @click="isMenu = false" to="/partners"
+                    >Партнерам</NuxtLink
+                  >
+                </li>
+                <li>
+                  <NuxtLink @click="isMenu = false" to="/">Тарифы</NuxtLink>
+                </li>
+                <li>
+                  <NuxtLink @click="isMenu = false" to="/"
+                    >CRM PayTaxi</NuxtLink
+                  >
+                </li>
+                <li>
+                  <NuxtLink @click="isMenu = false" to="/drivers"
+                    >Водителям</NuxtLink
+                  >
+                </li>
+                <li>
+                  <NuxtLink @click="isMenu = false" to="/">Контакты</NuxtLink>
+                </li>
+                <div class="header_phone d-lg-none">
+                  <a @click="menuToggle" class="closer">
+                    <i class="fa-solid fa-xmark"></i>
+                    X
+                  </a>
+                  <a href="tel:+78002225756">+7 (800) 222 57-56</a>
                 </div>
-              </li>
-            </ul>
+                <div class="header_phone d-lg-none">
+                  <a href="mailto:info@paytaxi.ru">info@paytaxi.ru</a>
+                </div>
+                <li class="d-lg-none">
+                  <div class="driver_apps extra_apps-menu">
+                    <!--  -->
+                    <div class="extra_item-menu">
+                      <div class="extra_img">
+                        <img src="../assets/images/app_gallery.svg" alt="" />
+                      </div>
+                      <p class="extra_title">App Gallery</p>
+                    </div>
+                    <!--  -->
+                    <div class="extra_item-menu">
+                      <div class="extra_img">
+                        <img src="../assets/images/app_store.svg" alt="" />
+                      </div>
+                      <p class="extra_title">App store</p>
+                    </div>
+                    <!--  -->
+                    <div class="extra_item-menu">
+                      <div class="extra_img">
+                        <img src="../assets/images/google_play.svg" alt="" />
+                      </div>
+                      <p class="extra_title">Google play</p>
+                    </div>
+                  </div>
+                </li>
+              </ul>
+            </div>
           </div>
           <div class="header_phone d-none d-lg-block">
             <a href="tel:+78002225756">+7 (800) 222 57-56</a>
           </div>
           <!-- hamburger_mobile -->
           <div @click="menuToggle" class="hamurger_menu d-lg-none">
-            <a href="#">
+            <a>
               <img src="../assets/images/mobile_hamburger.svg" alt="" />
             </a>
           </div>

@@ -1,6 +1,6 @@
 <template>
   <section class="hero">
-    <div class="container">
+    <div class="container ">
       <div class="hero_block">
         <div class="hero_left">
           <h2 class="hero_left_title">

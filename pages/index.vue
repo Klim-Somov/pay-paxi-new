@@ -1,6 +1,6 @@
 <template>
   <section class="hero">
-    <div class="container ">
+    <div class="container">
       <div class="hero_block">
         <div class="hero_left">
           <h2 class="hero_left_title">
@@ -387,7 +387,7 @@
       <div class="platform_block">
         <div class="platform_top">
           <p class="platform_number">01</p>
-          <p class="platform_desc">Создадите сайт и настройте рекламу</p>
+          <p class="platform_desc">Создадите сайт и настроите рекламу</p>
         </div>
         <div class="platform_body">
           <div class="grey_block">
@@ -1001,6 +1001,7 @@ const succes = ref(false);
 
 
 const openKPModal = () => {
+  console.log('hi');
   isModalOpen.value = true;
   modalTitle.value = "Получить КП";
   modalText.value = "Заполните форму, и мы отправим вам КП в течение часа";

@@ -115,10 +115,7 @@ a {
   text-decoration: none;
   display: inline-block;
   cursor: pointer;
-  transition: all 0.3s ease;
-  &:hover {
-    background: #4b62c7;
-  }
+ 
 }
 /* change colours to suit your needs */
 ins {
@@ -229,6 +226,10 @@ body {
     font-style: normal;
     font-weight: 400;
     line-height: normal;
+    transition: all 0.3s ease;
+    &:hover {
+      background:   #e0e0e4 !important;
+    }
   }
 }
 .platform_top {
@@ -269,7 +270,7 @@ body {
 }
 
 // modal
-.modal.show .zayavka_modal {
+ .zayavka_modal {
   border-radius: 50px;
   background: #222328;
   max-width: 800px;

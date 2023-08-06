@@ -399,7 +399,7 @@
       font-size: 25px;
     }
   }
-  .modal.show .zayavka_modal {
+  .zayavka_modal {
     border-radius: 30px;
     max-width: 90%;
     margin: 0 auto;
@@ -431,14 +431,16 @@
     right: -100%;
     display: flex;
     flex-direction: column;
+    opacity: 0.99;
     background: #fff;
     height: 100vh;
     z-index: 14;
     width: 45%;
     align-items: center;
-    padding-top: 100px;
+    padding-top: 50px;
     transition: all ease-in-out 0.2s;
     &.active {
+      height: 74%;
       right: 0;
     }
   }
@@ -664,6 +666,7 @@
   }
   header .header_menus.active {
     width: 65%;
+    height: 74%;
   }
   footer .footer_left {
     gap: 50px;
@@ -786,7 +789,7 @@
   .partner_offer {
     margin-bottom: 80px;
   }
-  .modal.show .zayavka_modal .zayavka_title {
+  .zayavka_modal .zayavka_title {
     font-size: 37px;
   }
   .secret#partner_secret,
@@ -957,10 +960,10 @@
       }
     }
   }
-  .modal.show .zayavka_modal .modal_person {
+  .zayavka_modal .modal_person {
     margin-left: 20px;
   }
-  .modal.show .zayavka_modal {
+  .zayavka_modal {
     padding: 20px;
   }
   header .header_block,
@@ -1224,6 +1227,7 @@
   }
   header .header_menus.active {
     width: 100%;
+    height: 64%;
   }
   .service_img img {
     width: 40px;

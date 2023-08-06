@@ -36,8 +36,9 @@ export default defineNuxtConfig({
     mailport: 25,
     mailhost: "smtp",
     mailfrom: "info@paytaxi.ru",
+    mailto: "info@paytaxi.ru",
     public: {
-      site: "",
+      site: "https://paytaxi.ru/",
       phone: "",
     },
   },

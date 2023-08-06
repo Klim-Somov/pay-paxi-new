@@ -5,6 +5,8 @@
         <h2>{{ title }}</h2>
         <p>{{ text }}</p>
         <input
+          v-maska
+          :data-maska="maska(input.placeholder)"
           v-for="(input, index) in inputs"
           :key="index"
           v-model="input.value"
@@ -16,16 +18,22 @@
         >
       </div>
     </div>
+    <!-- <Success/> -->
+
   </div>
 </template>
 
 <script setup>
 import { defineProps, defineEmits } from "vue";
 
+
 const { title, inputs, text } = defineProps(["title", "inputs", "text"]);
 const emit = defineEmits(["submit"]);
-
+const maska = (v) => {
+  if (v === "Телефон") return "+7##########";
+};
 const submit = () => {
+ 
   emit(
     "submit",
     inputs.map((input) => input.value)
@@ -35,7 +43,7 @@ const submit = () => {
 
 <style lang="scss">
 .modal-overlay {
-  z-index: 7;
+  z-index: 11;
   position: fixed;
   top: 0;
   left: 0;

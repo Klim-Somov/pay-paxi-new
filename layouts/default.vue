@@ -13,18 +13,60 @@
             </div>
 
             <ul :class="{ active: isMenu }" class="header_menus">
-              <li><NuxtLink to="/partners">Партнерам</NuxtLink></li>
-              <li><NuxtLink to="/">Тарифы</NuxtLink></li>
-              <li><NuxtLink to="/">CRM PayTaxi</NuxtLink></li>
-              <li><NuxtLink to="/drivers">Водителям</NuxtLink></li>
-              <li><NuxtLink to="/">Контакты</NuxtLink></li>
+              <li>
+                <NuxtLink @click="isMenu = false" to="/partners"
+                  >Партнерам</NuxtLink
+                >
+              </li>
+              <li>
+                <NuxtLink @click="isMenu = false" to="/">Тарифы</NuxtLink>
+              </li>
+              <li>
+                <NuxtLink @click="isMenu = false" to="/">CRM PayTaxi</NuxtLink>
+              </li>
+              <li>
+                <NuxtLink @click="isMenu = false" to="/drivers"
+                  >Водителям</NuxtLink
+                >
+              </li>
+              <li>
+                <NuxtLink @click="isMenu = false" to="/">Контакты</NuxtLink>
+              </li>
               <div class="header_phone d-lg-none">
-                <a @click="menuToggle" href="#" class="closer">
+                <a @click="menuToggle" class="closer">
                   <i class="fa-solid fa-xmark"></i>
                   X
                 </a>
                 <a href="tel:+78002225756">+7 (800) 222 57-56</a>
               </div>
+              <div class="header_phone d-lg-none">
+                <a href="mailto:info@paytaxi.ru">info@paytaxi.ru</a>
+              </div>
+              <li class="d-lg-none">
+                <div class="driver_apps extra_apps-menu">
+                  <!--  -->
+                  <div class="extra_item-menu">
+                    <div class="extra_img">
+                      <img src="../assets/images/app_gallery.svg" alt="" />
+                    </div>
+                    <p class="extra_title">App Gallery</p>
+                  </div>
+                  <!--  -->
+                  <div class="extra_item-menu">
+                    <div class="extra_img">
+                      <img src="../assets/images/app_store.svg" alt="" />
+                    </div>
+                    <p class="extra_title">App store</p>
+                  </div>
+                  <!--  -->
+                  <div class="extra_item-menu">
+                    <div class="extra_img">
+                      <img src="../assets/images/google_play.svg" alt="" />
+                    </div>
+                    <p class="extra_title">Google play</p>
+                  </div>
+                </div>
+              </li>
             </ul>
           </div>
           <div class="header_phone d-none d-lg-block">
@@ -55,13 +97,11 @@
             <div class="call_form">
               <input type="text" placeholder="Имя" name="name" id="" />
               <input type="tel" placeholder="Телефон" name="tel" id="" />
-              <button
-                class="call_send"
-                data-bs-toggle="modal"
-                data-bs-target="#staticBackdrop">
+              <button @click="handleSuccess" class="call_send">
                 Отправить заявку
               </button>
             </div>
+            <Success v-if="succes" />
           </div>
         </div>
         <div class="footer_block">
@@ -122,27 +162,21 @@
         </div>
       </div>
     </footer>
-    <div
-      class="modal fade"
-      id="staticBackdrop"
-      data-bs-keyboard="false"
-      tabindex="-1"
-      aria-labelledby="staticBackdropLabel"
-      aria-hidden="true">
-      <div class="modal-dialog zayavka_modal">
-        <div class="modal_person">
-          <img src="../assets/images/zayavka_person.svg" alt="" />
-        </div>
-        <p class="zayavka_title">Спасибо за заявку!</p>
-        <p class="zayavka_desc">Мы свяжемся с вами в ближайшее время!</p>
-      </div>
-    </div>
   </div>
 </template>
 <script setup>
 const isMenu = ref(false);
+const succes = ref(false);
+
+const handleSuccess = () => {
+  succes.value = true;
+  setTimeout(() => {
+    succes.value = false;
+  }, 3500);
+};
 
 const menuToggle = () => {
   isMenu.value = !isMenu.value;
 };
 </script>
+<style></style>

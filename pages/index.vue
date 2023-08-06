@@ -65,7 +65,9 @@
               <div class="form_inputs">
                 <input type="text" placeholder="Имя" name="name" />
                 <input type="tel" placeholder="Телефон" name="tel" />
-                <button type="submit">Отправить заявку</button>
+                <button @click.prevent="handleModalSubmit">
+                  Отправить заявку
+                </button>
               </div>
             </form>
           </div>
@@ -138,7 +140,7 @@
                 </div>
               </div>
             </SwiperSlide>
-            <SwiperSlide >
+            <SwiperSlide>
               <div class="swiper-slide">
                 <!--  -->
                 <div class="advice_location">
@@ -191,7 +193,7 @@
             <img src="../assets/images/advice_location.png" alt="" />
           </div>
           <div class="location_button">
-            <a  @click="openInstructionModal">Получить инструкцию</a>
+            <a @click="openInstructionModal">Получить инструкцию</a>
           </div>
         </div>
       </div>
@@ -650,7 +652,7 @@
             <p>предложения</p>
           </div>
           <div class="safety_buttons">
-            <a href="#" class="take_btn">Получить КП</a>
+            <a @click="openKPModal" class="take_btn">Получить КП</a>
             <div class="safety_img">
               <img src="../assets/images/safety_arrow.svg" alt="" />
             </div>
@@ -757,7 +759,7 @@
         </div>
       </div>
       <div class="secret_button">
-        <a href="#">Бесплатный доступ</a>
+        <a @click="openKPModal">Бесплатный доступ</a>
       </div>
     </div>
   </section>
@@ -863,7 +865,7 @@
               <div class="docs_image">
                 <img src="../assets/images/tarif_doc.svg" alt="" />
               </div>
-              <a href="#" class="docs_title"> Смотреть пример договора </a>
+              <a class="docs_title"> Смотреть пример договора </a>
             </label>
           </div>
         </div>
@@ -880,7 +882,7 @@
             <div class="tarif_bottom">
               <p class="tarif_price">Бесплатно</p>
               <div class="tarif_btn">
-                <a href="#">Выбрать</a>
+                <a @click="openKPModal">Выбрать</a>
               </div>
             </div>
           </div>
@@ -896,7 +898,7 @@
             <div class="tarif_bottom">
               <p class="tarif_price">6 000 руб/мес</p>
               <div class="tarif_btn">
-                <a href="#">Выбрать</a>
+                <a @click="openKPModal">Выбрать</a>
               </div>
             </div>
           </div>
@@ -913,7 +915,7 @@
             <div class="tarif_bottom">
               <p class="tarif_price">10 000 руб/мес</p>
               <div class="tarif_btn">
-                <a href="#">Выбрать</a>
+                <a @click="openKPModal">Выбрать</a>
               </div>
             </div>
           </div>
@@ -929,7 +931,7 @@
             <div class="tarif_bottom">
               <p class="tarif_price">50 000 руб/мес</p>
               <div class="tarif_btn">
-                <a href="#">Выбрать</a>
+                <a @click="openKPModal">Выбрать</a>
               </div>
             </div>
           </div>
@@ -979,7 +981,9 @@
       </div>
     </div>
   </section>
+  <Success v-if="succes" />
   <ModalForm
+    @close="closeModal"
     v-if="isModalOpen"
     :title="modalTitle"
     :text="modalText"
@@ -989,15 +993,28 @@
 <script setup>
 import { ref } from "vue";
 
+onMounted(() => {
+  document.addEventListener("click", closeModal);
+});
+
+const beforeUnmount = () => {
+  document.removeEventListener("click", closeForm);
+};
+
 const isModalOpen = ref(false);
 const modalTitle = ref("");
 const modalText = ref("");
 const modalInputs = ref([]);
+const succes = ref(false);
 
+const closeModal = (event) => {
+  if (!$refs.formContainer.contains(event.target)) {
+    isModalOpen.value = false;
+  }
+};
 const openKPModal = () => {
   isModalOpen.value = true;
   modalTitle.value = "Получить КП";
-
   modalText.value = "Заполните форму, и мы отправим вам КП в течение часа";
   modalInputs.value = [
     { placeholder: "Имя", value: "" },
@@ -1007,7 +1024,6 @@ const openKPModal = () => {
 };
 
 const openInstructionModal = () => {
-  console.log("hi");
   isModalOpen.value = true;
   modalTitle.value = "Получить инструкцию";
   modalText.value =
@@ -1021,8 +1037,10 @@ const openInstructionModal = () => {
 
 const handleModalSubmit = (values) => {
   console.log(values);
-  // Обработка данных из модального окна (values)
-  // Закрытие модального окна
+  succes.value = true;
+  setTimeout(() => {
+    succes.value = false;
+  }, 3500);
   isModalOpen.value = false;
 };
 </script>

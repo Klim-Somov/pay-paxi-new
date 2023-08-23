@@ -101,7 +101,6 @@
       <div class="crm_block" id="partner_crm">
         <div class="crm_top">
           <div class="platform_top">
-            <p class="platform_number">03</p>
             <p class="platform_desc">CRM система в рамках сервиса PayTaxi </p>
           </div>
           <p class="crm_desc">
@@ -127,7 +126,7 @@
               <span>Удобство контроля</span> &nbsp; базы входящих заявок
             </p>
             <div class="about_girl">
-              <img src="../assets/images/about_person.svg" alt="" />
+              <img src="../assets/images/crm_bro.svg" alt="" />
             </div>
           </div>
         </div>
@@ -453,42 +452,55 @@
           aria-atomic="true"></span>
       </div>
 
-      <div
-        class="partner_block d-none d-sm-flex swiper-initialized swiper-horizontal swiper-backface-hidden">
+      <div class="partner_block d-none d-sm-flex swiper-initialized swiper-horizontal swiper-backface-hidden">
         <div class="partner_item">
           <div class="partner_img">
-            <img src="../assets/images/partner1.svg" alt="" />
+              <div class="partner_img_active">
+                  <img src="../assets/images/partner1.svg" alt="">
+              </div>
+              <img class="no_active" src="../assets/images/partner_n1.svg" alt="">
           </div>
         </div>
         <div class="partner_item">
           <div class="partner_img">
-            <img src="../assets/images/partner2.svg" alt="" />
+              <div class="partner_img_active">
+                  <img src="../assets/images/partner2.svg" alt="">
+              </div>
+              <img class="no_active" src="../assets/images/partner_n2.svg" alt="">
           </div>
         </div>
         <div class="partner_item">
           <div class="partner_img">
-            <img src="../assets/images/partner3.svg" alt="" />
+              <div class="partner_img_active">
+                  <img src="../assets/images/partner3.svg" alt="">
+              </div>
+              <img class="no_active" src="../assets/images/partner_n3.svg" alt="">
           </div>
         </div>
         <div class="partner_item">
           <div class="partner_img">
-            <img src="../assets/images/partner4.svg" alt="" />
+              <div class="partner_img_active">
+                  <img src="../assets/images/partner4.svg" alt="">
+              </div>
+              <img class="no_active" src="../assets/images/partner_n4.svg" alt="">
           </div>
         </div>
         <div class="partner_item">
           <div class="partner_img">
-            <img src="../assets/images/partner5.svg" alt="" />
+              <div class="partner_img_active">
+                  <img src="../assets/images/partner5.svg" alt="">
+              </div>
+              <img class="no_active" src="../assets/images/partner_n5.svg" alt="">
           </div>
         </div>
         <div class="partner_item">
           <div class="partner_img">
-            <img src="../assets/images/partner6.svg" alt="" />
+              <div class="partner_img_active">
+                  <img src="../assets/images/partner6.svg" alt="">
+              </div>
+              <img class="no_active" src="../assets/images/partner_n6.svg" alt="">
           </div>
         </div>
-        <span
-          class="swiper-notification"
-          aria-live="assertive"
-          aria-atomic="true"></span>
       </div>
     </div>
     <Success v-if="succes" />
@@ -541,4 +553,5 @@ const handleModalSubmit = (values) => {
   }, 3500);
   isModalOpen.value = false;
 };
+
 </script>

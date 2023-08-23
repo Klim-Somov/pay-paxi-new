@@ -55,7 +55,7 @@
             <form class="right_form">
               <div class="form_top">
                 <div class="form_number">
-                  <img src="../assets/images/30den.svg" alt="" />
+                  <img src="../assets/images/30.svg" alt="" />
                 </div>
                 <div class="form_top_title">Бесплатный доступ к системе</div>
               </div>
@@ -347,32 +347,68 @@
       <div class="partner_block d-none d-sm-flex">
         <div class="partner_item">
           <div class="partner_img">
-            <img src="../assets/images/partner1.svg" alt="" />
+            <div class="partner_img_active">
+              <img src="../assets/images/partner1.svg" alt="" />
+            </div>
+            <img
+              class="no_active"
+              src="../assets/images/partner_n1.svg"
+              alt="" />
           </div>
         </div>
         <div class="partner_item">
           <div class="partner_img">
-            <img src="../assets/images/partner2.svg" alt="" />
+            <div class="partner_img_active">
+              <img src="../assets/images/partner2.svg" alt="" />
+            </div>
+            <img
+              class="no_active"
+              src="../assets/images/partner_n2.svg"
+              alt="" />
           </div>
         </div>
         <div class="partner_item">
           <div class="partner_img">
-            <img src="../assets/images/partner3.svg" alt="" />
+            <div class="partner_img_active">
+              <img src="../assets/images/partner3.svg" alt="" />
+            </div>
+            <img
+              class="no_active"
+              src="../assets/images/partner_n3.svg"
+              alt="" />
           </div>
         </div>
         <div class="partner_item">
           <div class="partner_img">
-            <img src="../assets/images/partner4.svg" alt="" />
+            <div class="partner_img_active">
+              <img src="../assets/images/partner4.svg" alt="" />
+            </div>
+            <img
+              class="no_active"
+              src="../assets/images/partner_n4.svg"
+              alt="" />
           </div>
         </div>
         <div class="partner_item">
           <div class="partner_img">
-            <img src="../assets/images/partner5.svg" alt="" />
+            <div class="partner_img_active">
+              <img src="../assets/images/partner5.svg" alt="" />
+            </div>
+            <img
+              class="no_active"
+              src="../assets/images/partner_n5.svg"
+              alt="" />
           </div>
         </div>
         <div class="partner_item">
           <div class="partner_img">
-            <img src="../assets/images/partner6.svg" alt="" />
+            <div class="partner_img_active">
+              <img src="../assets/images/partner6.svg" alt="" />
+            </div>
+            <img
+              class="no_active"
+              src="../assets/images/partner_n6.svg"
+              alt="" />
           </div>
         </div>
       </div>
@@ -581,7 +617,10 @@
           </div>
         </div>
         <div class="crm_user">
-          <h4 class="crm_user_title">Автоматическое получение ЛИДов из</h4>
+          <h4 class="crm_user_title">
+            Автоматическое получение <br />
+            ЛИДов из
+          </h4>
 
           <div class="crm_bottom_list">
             <ul class="crm_list">
@@ -982,26 +1021,27 @@
     </div>
   </section>
   <Success v-if="succes" />
+  <Error v-if="error" />
   <ModalForm
+    @close="closeForm"
     v-if="isModalOpen"
     :title="modalTitle"
     :text="modalText"
     :inputs="modalInputs"
+    @error="handleModalError"
     @submit="handleModalSubmit" />
 </template>
 <script setup>
 import { ref } from "vue";
-
 
 const isModalOpen = ref(false);
 const modalTitle = ref("");
 const modalText = ref("");
 const modalInputs = ref([]);
 const succes = ref(false);
-
+const error = ref(false);
 
 const openKPModal = () => {
-  console.log('hi');
   isModalOpen.value = true;
   modalTitle.value = "Получить КП";
   modalText.value = "Заполните форму, и мы отправим вам КП в течение часа";
@@ -1010,6 +1050,9 @@ const openKPModal = () => {
     { placeholder: "Телефон", value: "" },
     { placeholder: "Почта", value: "" },
   ];
+};
+const closeForm = () => {
+  isModalOpen.value = false;
 };
 
 const openInstructionModal = () => {
@@ -1024,8 +1067,14 @@ const openInstructionModal = () => {
   ];
 };
 
-const handleModalSubmit = (values) => {
-  console.log(values);
+const handleModalError = () => {
+  error.value = true;
+  setTimeout(() => {
+    error.value = false;
+  }, 3500);
+  isModalOpen.value = false;
+};
+const handleModalSubmit = () => {
   succes.value = true;
   setTimeout(() => {
     succes.value = false;

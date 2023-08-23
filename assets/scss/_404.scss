@@ -3,7 +3,7 @@
     .find_block{
         background: #222328;
         border-radius: 25px;
-        padding: 110px 0 110px 200px;
+        padding: 110px 0 110px 70px;
         display: flex;
         align-items: center;
         gap: 225px;
@@ -41,7 +41,11 @@
                     font-weight: 500;
                     line-height: normal;
                     border-radius: 60px;
-                    background: #F19900;
+                    background: #5F79EA;
+                    transition: all ease-in .2s;
+                    &:hover{
+                        background: #7990F9;
+                    }
                 }
             }
         }

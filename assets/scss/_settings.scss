@@ -197,6 +197,13 @@ body {
     }
   }
 }
+.closer {
+  position: absolute;
+  top: 35px;
+  right: 35px;
+  cursor: pointer;
+
+}
 .wrapper {
   overflow: hidden;
 }

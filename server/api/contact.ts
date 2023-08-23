@@ -1,5 +1,6 @@
 import nodemailer from 'nodemailer'
 const config = useRuntimeConfig()
+
 const transporter = nodemailer.createTransport({
   host: config.mailhost,
   port: config.mailport,
@@ -24,6 +25,6 @@ export default defineEventHandler(async (event) => {
     })
     return 'Отправлено'
   } catch (error) {
-    sendError(event, createError({ statusCode: 400, statusMessage: `ошибка-${error}` }))
+    sendError(event, createError({ statusCode: 400, message: `ошибка-${error}` }))
   }
 })

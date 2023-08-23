@@ -2,6 +2,9 @@
   <div class="modal-overlay">
     <div class="modal-form">
       <div class="modal-content">
+        <div @click="$emit('close')" class="closer">
+          <img src="../assets/images/close.svg" alt="" />
+        </div>
         <h2>{{ title }}</h2>
         <p>{{ text }}</p>
         <input
@@ -19,25 +22,39 @@
       </div>
     </div>
     <!-- <Success/> -->
-
   </div>
 </template>
 
 <script setup>
 import { defineProps, defineEmits } from "vue";
 
-
 const { title, inputs, text } = defineProps(["title", "inputs", "text"]);
-const emit = defineEmits(["submit"]);
+const emit = defineEmits(["submit", "error"]);
+
+const { $csrfFetch } = useNuxtApp();
+
 const maska = (v) => {
   if (v === "Телефон") return "+7##########";
 };
+
 const submit = () => {
- 
-  emit(
-    "submit",
-    inputs.map((input) => input.value)
-  );
+  if (!inputs[0].value || !inputs[1].value) return;
+
+  $csrfFetch("/api/contact", {
+    method: "POST",
+    body: {
+      from: inputs[0].value,
+      phone: inputs[1].value,
+      email: inputs[2]?.value,
+    },
+  })
+    .then(() => {
+      emit("submit");
+    })
+    .catch((e) => {
+      emit("error");
+      console.log(e);
+    });
 };
 </script>
 
@@ -74,21 +91,34 @@ const submit = () => {
   justify-content: center;
   display: flex;
   h2 {
-    margin-top: 30px;
+    margin-top: 50px;
     margin-bottom: 20px;
     color: #222328;
     text-align: center;
-    font-size: 50px;
+    font-size: 60px;
     font-weight: 400;
+    @media (max-width: 600px) {
+      margin-top: 55px;
+      text-align: center;
+      font-size: 18px;
+      font-style: normal;
+      font-weight: 500;
+      line-height: normal;
+    }
   }
   p {
     color: #222328;
-    text-align: center;
     font-size: 18px;
     font-style: normal;
     font-weight: 400;
     line-height: normal;
     margin-bottom: 30px;
+    @media (max-width: 600px) {
+      font-size: 16px;
+      font-style: normal;
+      font-weight: 400;
+      line-height: normal;
+    }
   }
   a {
     padding: 30px 0;

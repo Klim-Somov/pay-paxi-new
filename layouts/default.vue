@@ -13,7 +13,7 @@
             </div>
             <div :class="{ 'modal-overlay': isMenu }"></div>
 
-            <ul :class="{ active: isMenu }" class="header_menus">
+            <ul :class="{ active: isMenu }" class="header_menus ">
               <li>
                 <NuxtLink @click="isMenu = false" to="/partners"
                   >Партнерам</NuxtLink

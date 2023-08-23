@@ -21,7 +21,6 @@
         >
       </div>
     </div>
-    <!-- <Success/> -->
   </div>
 </template>
 
@@ -66,7 +65,7 @@ const submit = () => {
   left: 0;
   width: 100%;
   height: 100%;
-  backdrop-filter: blur(7px); /* Добавляем размытие */
+  backdrop-filter: blur(7px);
 
   background-color: rgba(255, 255, 255, 0.1);
   display: flex;

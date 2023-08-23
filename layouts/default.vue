@@ -95,13 +95,26 @@
           </div>
           <div class="call_right">
             <div class="call_form">
-              <input type="text" placeholder="Имя" name="name" id="" />
-              <input type="tel" placeholder="Телефон" name="tel" id="" />
-              <button @click="handleSuccess" class="call_send">
+              <input
+                v-model="name"
+                type="text"
+                placeholder="Имя"
+                name="name"
+                id="" />
+              <input
+                v-maska
+                data-maska="+7##########"
+                v-model="phone"
+                type="tel"
+                placeholder="Телефон"
+                name="tel"
+                id="" />
+              <button @click="onSubmit" class="call_send">
                 Отправить заявку
               </button>
             </div>
             <Success v-if="succes" />
+            <Error v-if="error" />
           </div>
         </div>
         <div class="footer_block">
@@ -174,14 +187,48 @@
   </div>
 </template>
 <script setup>
+const { $csrfFetch } = useNuxtApp();
+
 const isMenu = ref(false);
 const succes = ref(false);
+const error = ref(false);
+const name = ref("");
+const phone = ref("");
 
-const handleSuccess = () => {
+const handleModalError = () => {
+  error.value = true;
+  setTimeout(() => {
+    error.value = false;
+  }, 3500);
+};
+
+const handleModalSubmit = () => {
   succes.value = true;
   setTimeout(() => {
     succes.value = false;
   }, 3500);
+};
+
+const onSubmit = () => {
+  if (!name.value || !phone.value) return;
+
+  $csrfFetch("/api/contact", {
+    method: "POST",
+    body: {
+      from: name.value,
+      phone: phone.value,
+      email: "",
+    },
+  })
+    .then(() => {
+      handleModalSubmit();
+    })
+    .catch((e) => {
+      handleModalError();
+      console.log(e);
+    });
+  name.value = "";
+  phone.value = "";
 };
 
 const menuToggle = () => {

@@ -63,11 +63,19 @@
                 Заполните форму и получите тестовый доступ в течение часа
               </p>
               <div class="form_inputs">
-                <input type="text" placeholder="Имя" name="name" />
-                <input type="tel" placeholder="Телефон" name="tel" />
-                <button @click.prevent="handleModalSubmit">
-                  Отправить заявку
-                </button>
+                <input
+                  v-model="name"
+                  type="text"
+                  placeholder="Имя"
+                  name="name" />
+                <input
+                  v-maska
+                  data-maska="+7##########"
+                  v-model="phone"
+                  type="tel"
+                  placeholder="Телефон"
+                  name="tel" />
+                <button @click.prevent="onSubmit">Отправить заявку</button>
               </div>
             </form>
           </div>
@@ -1032,7 +1040,7 @@
     @submit="handleModalSubmit" />
 </template>
 <script setup>
-import { ref } from "vue";
+const { $csrfFetch } = useNuxtApp();
 
 const isModalOpen = ref(false);
 const modalTitle = ref("");
@@ -1040,6 +1048,30 @@ const modalText = ref("");
 const modalInputs = ref([]);
 const succes = ref(false);
 const error = ref(false);
+const name = ref("");
+const phone = ref("");
+
+const onSubmit = () => {
+  if (!name.value || !phone.value) return;
+
+  $csrfFetch("/api/contact", {
+    method: "POST",
+    body: {
+      from: name.value,
+      phone: phone.value,
+      email: "",
+    },
+  })
+    .then(() => {
+      handleModalSubmit();
+    })
+    .catch((e) => {
+      handleModalError();
+      console.log(e);
+    });
+  name.value = "";
+  phone.value = "";
+};
 
 const openKPModal = () => {
   isModalOpen.value = true;
@@ -1074,6 +1106,7 @@ const handleModalError = () => {
   }, 3500);
   isModalOpen.value = false;
 };
+
 const handleModalSubmit = () => {
   succes.value = true;
   setTimeout(() => {

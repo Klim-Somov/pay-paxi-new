@@ -10,7 +10,7 @@
         <div class="modal_person">
           <img src="../assets/images/zayavka_person.svg" alt="" />
         </div>
-        <p class="zayavka_title">Ошибка в отравке данных</p>
+        <p class="zayavka_title">Ошибка в отправке данных</p>
         <p class="zayavka_desc">Выбирите другой способ связи</p>
       </div>
     </div>

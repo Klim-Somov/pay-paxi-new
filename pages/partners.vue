@@ -452,75 +452,98 @@
           aria-atomic="true"></span>
       </div>
 
-      <div class="partner_block d-none d-sm-flex swiper-initialized swiper-horizontal swiper-backface-hidden">
+      <div
+        class="partner_block d-none d-sm-flex swiper-initialized swiper-horizontal swiper-backface-hidden">
         <div class="partner_item">
           <div class="partner_img">
-              <div class="partner_img_active">
-                  <img src="../assets/images/partner1.svg" alt="">
-              </div>
-              <img class="no_active" src="../assets/images/partner_n1.svg" alt="">
+            <div class="partner_img_active">
+              <img src="../assets/images/partner1.svg" alt="" />
+            </div>
+            <img
+              class="no_active"
+              src="../assets/images/partner_n1.svg"
+              alt="" />
           </div>
         </div>
         <div class="partner_item">
           <div class="partner_img">
-              <div class="partner_img_active">
-                  <img src="../assets/images/partner2.svg" alt="">
-              </div>
-              <img class="no_active" src="../assets/images/partner_n2.svg" alt="">
+            <div class="partner_img_active">
+              <img src="../assets/images/partner2.svg" alt="" />
+            </div>
+            <img
+              class="no_active"
+              src="../assets/images/partner_n2.svg"
+              alt="" />
           </div>
         </div>
         <div class="partner_item">
           <div class="partner_img">
-              <div class="partner_img_active">
-                  <img src="../assets/images/partner3.svg" alt="">
-              </div>
-              <img class="no_active" src="../assets/images/partner_n3.svg" alt="">
+            <div class="partner_img_active">
+              <img src="../assets/images/partner3.svg" alt="" />
+            </div>
+            <img
+              class="no_active"
+              src="../assets/images/partner_n3.svg"
+              alt="" />
           </div>
         </div>
         <div class="partner_item">
           <div class="partner_img">
-              <div class="partner_img_active">
-                  <img src="../assets/images/partner4.svg" alt="">
-              </div>
-              <img class="no_active" src="../assets/images/partner_n4.svg" alt="">
+            <div class="partner_img_active">
+              <img src="../assets/images/partner4.svg" alt="" />
+            </div>
+            <img
+              class="no_active"
+              src="../assets/images/partner_n4.svg"
+              alt="" />
           </div>
         </div>
         <div class="partner_item">
           <div class="partner_img">
-              <div class="partner_img_active">
-                  <img src="../assets/images/partner5.svg" alt="">
-              </div>
-              <img class="no_active" src="../assets/images/partner_n5.svg" alt="">
+            <div class="partner_img_active">
+              <img src="../assets/images/partner5.svg" alt="" />
+            </div>
+            <img
+              class="no_active"
+              src="../assets/images/partner_n5.svg"
+              alt="" />
           </div>
         </div>
         <div class="partner_item">
           <div class="partner_img">
-              <div class="partner_img_active">
-                  <img src="../assets/images/partner6.svg" alt="">
-              </div>
-              <img class="no_active" src="../assets/images/partner_n6.svg" alt="">
+            <div class="partner_img_active">
+              <img src="../assets/images/partner6.svg" alt="" />
+            </div>
+            <img
+              class="no_active"
+              src="../assets/images/partner_n6.svg"
+              alt="" />
           </div>
         </div>
       </div>
     </div>
     <Success v-if="succes" />
+    <Error v-if="error" />
     <ModalForm
-      @close="closeModal"
+      @close="closeForm"
       v-if="isModalOpen"
       :title="modalTitle"
       :text="modalText"
       :inputs="modalInputs"
+      @error="handleModalError"
       @submit="handleModalSubmit" />
   </section>
 </template>
 <script setup>
-import { ref } from "vue";
 
 const isModalOpen = ref(false);
 const modalTitle = ref("");
 const modalText = ref("");
 const modalInputs = ref([]);
 const succes = ref(false);
+const error = ref(false);
+
+
 
 const openKPModal = () => {
   isModalOpen.value = true;
@@ -533,25 +556,24 @@ const openKPModal = () => {
   ];
 };
 
-const openInstructionModal = () => {
-  isModalOpen.value = true;
-  modalTitle.value = "Получить инструкцию";
-  modalText.value =
-    "Заполните форму, и мы отправим вам инструкцию в течение часа";
-
-  modalInputs.value = [
-    { placeholder: "Имя", value: "" },
-    { placeholder: "Телефон", value: "" },
-  ];
+const closeForm = () => {
+  isModalOpen.value = false;
 };
 
-const handleModalSubmit = (values) => {
-  console.log(values);
+
+const handleModalError = () => {
+  error.value = true;
+  setTimeout(() => {
+    error.value = false;
+  }, 3500);
+  isModalOpen.value = false;
+};
+
+const handleModalSubmit = () => {
   succes.value = true;
   setTimeout(() => {
     succes.value = false;
   }, 3500);
   isModalOpen.value = false;
 };
-
 </script>

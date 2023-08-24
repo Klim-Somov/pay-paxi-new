@@ -1073,12 +1073,7 @@ const onSubmit = () => {
   phone.value = "";
 };
 
-const scrollToSection = (sectionId) => {
-  const section = document.getElementById(sectionId);
-  if (section) {
-    section.scrollIntoView({ behavior: 'smooth' });
-  }
-};
+
 
 const openKPModal = () => {
   isModalOpen.value = true;

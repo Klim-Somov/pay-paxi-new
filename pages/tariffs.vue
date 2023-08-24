@@ -141,7 +141,7 @@
     @submit="handleModalSubmit" />
 </template>
 <script setup>
-const { $csrfFetch } = useNuxtApp();
+
 
 const isModalOpen = ref(false);
 const modalTitle = ref("");
@@ -149,37 +149,8 @@ const modalText = ref("");
 const modalInputs = ref([]);
 const succes = ref(false);
 const error = ref(false);
-const name = ref("");
-const phone = ref("");
 
-const onSubmit = () => {
-  if (!name.value || !phone.value) return;
 
-  $csrfFetch("/api/contact", {
-    method: "POST",
-    body: {
-      from: name.value,
-      phone: phone.value,
-      email: "",
-    },
-  })
-    .then(() => {
-      handleModalSubmit();
-    })
-    .catch((e) => {
-      handleModalError();
-      console.log(e);
-    });
-  name.value = "";
-  phone.value = "";
-};
-
-const scrollToSection = (sectionId) => {
-  const section = document.getElementById(sectionId);
-  if (section) {
-    section.scrollIntoView({ behavior: "smooth" });
-  }
-};
 
 const openKPModal = () => {
   isModalOpen.value = true;
@@ -195,17 +166,6 @@ const closeForm = () => {
   isModalOpen.value = false;
 };
 
-const openInstructionModal = () => {
-  isModalOpen.value = true;
-  modalTitle.value = "Получить инструкцию";
-  modalText.value =
-    "Заполните форму, и мы отправим вам инструкцию в течение часа";
-
-  modalInputs.value = [
-    { placeholder: "Имя", value: "" },
-    { placeholder: "Телефон", value: "" },
-  ];
-};
 
 const handleModalError = () => {
   error.value = true;

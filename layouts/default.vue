@@ -149,10 +149,9 @@
             </div>
             <div class="right_block">
               <ul class="right_block_list">
-                <li><a href="#">Стоимость</a></li>
-                <li><a href="#">Обучение бизнесу</a></li>
-                <li><a href="#">Как получать водителей</a></li>
-                <li><a href="#">Отзывы</a></li>
+                <li><a>Стоимость</a></li>
+                <li><a>Обучение бизнесу</a></li>
+                <li><a>Как получать водителей</a></li>
               </ul>
               <p class="footer_rules">
                 Пользовательское соглашение <br />

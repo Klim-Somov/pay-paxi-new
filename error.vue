@@ -11,7 +11,7 @@
             <p class="find_name">Страница не найдена</p>
             <p class="find_desc">Попробуйте найти ее вручную</p>
             <div class="find_btn">
-              <a href="index.html">Перейти на главную</a>
+              <NuxtLink to="/">Перейти на главную</NuxtLink>
             </div>
           </div>
         </div>

@@ -12,7 +12,6 @@
               </NuxtLink>
             </div>
             <div :class="{ 'modal-overlay': isMenu }"></div>
-
             <ul :class="{ active: isMenu }" class="header_menus">
               <li>
                 <NuxtLink
@@ -31,13 +30,25 @@
                 >
               </li>
               <li>
-                <NuxtLink @click="isMenu = false" to="/">Тарифы</NuxtLink>
+                <NuxtLink
+                  :class="{ menuLinkActive: route.name === 'tariffs' }"
+                  @click="isMenu = false"
+                  to="/tariffs"
+                  >Тарифы</NuxtLink
+                >
               </li>
               <li>
-                <NuxtLink @click="isMenu = false" to="/">CRM PayTaxi</NuxtLink>
+                <NuxtLink
+                  :class="{ menuLinkActive: route.name === 'crm' }"
+                  @click="isMenu = false"
+                  to="/crm"
+                  >CRM PayTaxi</NuxtLink
+                >
               </li>
               <li>
-                <NuxtLink @click="isMenu = false" to="/">Контакты</NuxtLink>
+                <NuxtLink @click="isMenu = false" to="/contacts"
+                  >Контакты</NuxtLink
+                >
               </li>
               <div class="header_phone d-lg-none">
                 <div @click="menuToggle" class="closer">
@@ -194,8 +205,8 @@
 </template>
 <script setup>
 const { $csrfFetch } = useNuxtApp();
-const route = useRoute();
 
+const route = useRoute();
 const isMenu = ref(false);
 const succes = ref(false);
 const error = ref(false);
@@ -217,6 +228,7 @@ const handleModalSubmit = () => {
 };
 
 const onSubmit = () => {
+  console.log(route);
   if (!name.value || !phone.value) return;
 
   $csrfFetch("/api/contact", {

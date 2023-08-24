@@ -13,6 +13,9 @@ header {
     align-items: center;
     gap: 85px;
   }
+  .menuLinkActive {
+    border-bottom: 3px solid #1c37b0;
+  }
   .header_menus {
     display: flex;
     list-style: none;
@@ -31,15 +34,15 @@ header {
         width: 100%;
         height: 2.5px;
         border-radius: 4px;
-        background-color: #1C37B0;
+        background-color: #1c37b0;
         bottom: -3px;
         left: 0;
         transform-origin: left;
         transform: scaleX(0);
         transition: transform 0.2s ease-in-out;
       }
-      &:hover{
-        color: #1C37B0;
+      &:hover {
+        color: #1c37b0;
       }
       &:hover::before {
         transform-origin: left;
@@ -56,11 +59,10 @@ header {
     line-height: normal;
   }
 }
- .header_menus {
+.header_menus {
   &.active {
     border-radius: 30px;
     height: 64%;
-
   }
 }
 .modal-overlay {
@@ -77,7 +79,7 @@ header {
   justify-content: center;
   align-items: center;
 }
-.about_girl img{
+.about_girl img {
   position: relative;
   z-index: 5;
 }
@@ -88,7 +90,7 @@ header {
 .advice1 .item_img img {
   width: 79%;
 }
-.advice2 .item_img img{
+.advice2 .item_img img {
   width: 106%;
 }
 //  hero section
@@ -118,7 +120,7 @@ header {
     padding: 45px 0 60px 45px;
     border-radius: 50px;
     background: url(../images/hero_left_bg.png),
-    linear-gradient(180deg, #1C37B0 0%, #FDFDFD 77%);
+      linear-gradient(180deg, #1c37b0 0%, #fdfdfd 77%);
     background-position: right bottom;
     background-repeat: no-repeat;
 
@@ -580,7 +582,6 @@ header {
     position: relative;
     margin-left: 65px;
     background-image: url(../images/adminBBg.jpg);
-
   }
   .white_block {
     border-radius: 50px;
@@ -593,7 +594,6 @@ header {
     height: 255px;
     z-index: 3;
     background-image: url(../images/adminLBg.jpg);
-
   }
   .platform_body {
     gap: 10px;
@@ -778,8 +778,6 @@ header {
       background-image: url(../images/crmBBg.jpg);
       background-repeat: no-repeat;
       background-size: cover;
-
-
     }
   }
   .crm_top {
@@ -869,7 +867,6 @@ header {
       background-image: url(../images/antifrodBg.svg);
       background-position: center;
       background-size: cover;
-
     }
     .crm_top {
       margin-bottom: 90px;
@@ -1264,22 +1261,22 @@ header {
     }
   }
 }
-.active_img{
+.active_img {
   display: none;
 }
-.extra_item{
-  transition: all ease-in .3s;
+.extra_item {
+  transition: all ease-in 0.3s;
   cursor: pointer;
-  &:hover{
-    background: #1C37B0;
-    .extra_img > img{
+  &:hover {
+    background: #1c37b0;
+    .extra_img > img {
       display: none;
     }
-    .active_img{
+    .active_img {
       display: block;
     }
-    
-    p{
+
+    p {
       color: #fff;
     }
   }
@@ -1448,23 +1445,23 @@ footer {
         line-height: 40px; /* 200% */
         position: relative;
         transition: all ease 0.2s;
-      &::before {
-        content: "";
-        position: absolute;
-        width: 100%;
-        height: 2.5px;
-        border-radius: 4px;
-        background-color: rgb(29, 33, 31);
-        bottom: -3px;
-        left: 0;
-        transform-origin: left;
-        transform: scaleX(0);
-        transition: transform 0.2s ease-in-out;
-      }
-      &:hover::before {
-        transform-origin: left;
-        transform: scaleX(1);
-      }
+        &::before {
+          content: "";
+          position: absolute;
+          width: 100%;
+          height: 2.5px;
+          border-radius: 4px;
+          background-color: rgb(29, 33, 31);
+          bottom: -3px;
+          left: 0;
+          transform-origin: left;
+          transform: scaleX(0);
+          transition: transform 0.2s ease-in-out;
+        }
+        &:hover::before {
+          transform-origin: left;
+          transform: scaleX(1);
+        }
       }
     }
     .footer_rules {
@@ -1476,7 +1473,7 @@ footer {
     }
   }
   .footer_right {
-    & > a{
+    & > a {
       position: relative;
       transition: all ease 0.2s;
       &::before {

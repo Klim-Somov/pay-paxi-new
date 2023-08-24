@@ -13,14 +13,20 @@
             </div>
             <div :class="{ 'modal-overlay': isMenu }"></div>
 
-            <ul :class="{ active: isMenu }" class="header_menus ">
+            <ul :class="{ active: isMenu }" class="header_menus">
               <li>
-                <NuxtLink @click="isMenu = false" to="/partners"
+                <NuxtLink
+                  :class="{ menuLinkActive: route.name === 'partners' }"
+                  @click="isMenu = false"
+                  to="/partners"
                   >Партнерам</NuxtLink
                 >
               </li>
               <li>
-                <NuxtLink @click="isMenu = false" to="/drivers"
+                <NuxtLink
+                  :class="{ menuLinkActive: route.name === 'drivers' }"
+                  @click="isMenu = false"
+                  to="/drivers"
                   >Водителям</NuxtLink
                 >
               </li>
@@ -188,6 +194,7 @@
 </template>
 <script setup>
 const { $csrfFetch } = useNuxtApp();
+const route = useRoute();
 
 const isMenu = ref(false);
 const succes = ref(false);

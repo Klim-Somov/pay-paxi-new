@@ -50,7 +50,7 @@
                   >Контакты</NuxtLink
                 >
               </li>
-              <div class="header_phone d-lg-none">
+              <div class="header_phone header_phone-mob d-lg-none">
                 <div @click="menuToggle" class="closer">
                   <img src="../assets/images/close.svg" alt="" />
                 </div>

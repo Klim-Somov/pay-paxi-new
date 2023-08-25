@@ -16,13 +16,13 @@
     bottom: 10px;
     right: -25px;
     img {
-      width: 80%;
+      width: 70%;
     }
   }
-  .advice0 .item_img img{
+  .advice0 .item_img img {
     width: 117%;
   }
-  .advice1 .item_img img{
+  .advice1 .item_img img {
     width: 100%;
   }
   .advice2 .item_img img {
@@ -111,17 +111,17 @@
   .container {
     max-width: 1140px;
   }
-  .find_left img{
+  .find_left img {
     width: 90%;
   }
   .document .document_title_block .document_title {
     font-size: 36px;
   }
-  .advice .advice_block .advice_item ,
-  .advice .advice_block .advice_location{
+  .advice .advice_block .advice_item,
+  .advice .advice_block .advice_location {
     min-height: 380px;
   }
-  .location_img img{
+  .location_img img {
     width: 75%;
   }
   .form_number {
@@ -132,7 +132,7 @@
   .secret .secret_block .secret_item3 {
     .secret_img {
       img {
-        width: 60%;
+        width: 95%;
       }
     }
   }
@@ -158,7 +158,7 @@
     z-index: 10;
   }
   .tarif .tarif_block .tarif_item .tarif_btn a {
-    padding: 16px 55px;
+    padding: 23px 56px;
   }
   .tarif .tarif_block .tarif_item .tarif_main {
     padding: 20px;
@@ -202,7 +202,7 @@
     gap: 35px;
   }
   .advice .advice_block .advice_item.advice1 {
-    padding: 34px 20px 29px 16px;
+    padding: 25px;
   }
   .item_img img {
     width: 100%;
@@ -215,7 +215,7 @@
     margin-bottom: 2px;
   }
   .advice .advice_block .location_button a {
-    padding: 11px 0;
+    padding: 23px 0;
     margin-top: 0;
   }
   .advice .advice_block .advice_item_desc {
@@ -236,6 +236,10 @@
 
   header .header_menus {
     gap: 30px;
+  }
+
+  .header_phone-mob {
+    margin-top: 25px;
   }
   header .header_phone a {
     font-size: 20px;
@@ -265,11 +269,11 @@
   .find .find_block .find_right .find_btn a {
     padding: 34px 40px;
   }
-  
+
   .find_left img {
     width: 100%;
   }
-  .service .service_block .service_item{
+  .service .service_block .service_item {
     padding: 8px 25px 8px 7px;
   }
   #driver_hero .driver_hero_bottom .driver_hero_desc {
@@ -421,7 +425,7 @@
     width: 75%;
   }
   .advice0 .item_img img {
-    width: 110%;
+    width: 83%;
   }
   .advice2 .item_img img {
     width: 103%;
@@ -468,7 +472,7 @@
     padding-top: 50px;
     transition: all ease-in-out 0.2s;
     &.active {
-      height: 630px;
+      height: 670px;
       right: 0;
       margin: 10px;
     }
@@ -545,7 +549,7 @@
     line-height: 20px;
   }
   .platform_location .location_btn {
-    padding: 15px 0;
+    padding: 23px 0;
   }
 
   .about .about_block {
@@ -604,6 +608,7 @@
     gap: 20px;
   }
   .advice .advice_block {
+    justify-content: center;
     flex-wrap: wrap;
     gap: 20px 0;
   }
@@ -619,7 +624,7 @@
     padding: 100px 0;
     background: linear-gradient(180deg, #f0f3f9 0%, #e6eaf2 94.59%);
   }
-  
+
   .form_number img {
     width: 105%;
   }
@@ -628,6 +633,7 @@
   .container {
     max-width: 540px;
   }
+
   .referal .referal_top {
     gap: 17px;
     flex-direction: column;
@@ -674,13 +680,13 @@
   #driver_hero .driver_hero_item .driver_text {
     font-size: 15px;
     line-height: normal;
+    padding: 19px;
   }
   .driver_icon img {
     width: 40px;
     object-fit: cover;
   }
   #driver_hero .hero_block .driver_phone {
-    bottom: -74px;
   }
   #driver_hero .hero_left_title {
     margin-bottom: 180px;
@@ -764,7 +770,7 @@
     width: 55%;
   }
   .platform_top .platform_desc {
-    font-size: 18px;
+    font-size: 20px;
   }
   .hero .hero_right {
     width: 90%;
@@ -831,13 +837,22 @@
   }
   .advantages .advantage_item1 .advan_img img,
   .advantages .advantage_item4 img {
-    width: 60%;
+    max-width: 120px;
+  }
+  .advantages .advantage_item2 .advan_img img,
+  .advantages .advantage_item2 img {
+    max-width: 208px;
+  }
+  .advantages .advantage_item3 .advan_img img,
+  .advantages .advantage_item3 img {
+    max-width: 178px;
   }
   .advantages .advantage_item {
     width: 72%;
   }
   footer .footer_block {
     flex-direction: column;
+    align-items: center;
   }
   .find .find_block {
     padding: 25px 0 30px 0px;
@@ -906,13 +921,13 @@
     padding: 50px 35px 45px 35px;
   }
   .secret .secret_button a {
-    padding: 22px 55px;
+    padding: 23px 72px;
   }
   .secret .secret_block .secret_title {
     font-size: 21px;
   }
   .safety_section .safety_block .take_btn {
-    padding: 15px 48px;
+    padding: 23px 48px;
   }
   .crm_section .about_border {
     display: block;
@@ -929,11 +944,11 @@
     height: 174px;
   }
   .partner {
-    padding: 60px 0 60px 0;
+    padding: 60px 0 80px 0;
   }
   .platform .platform_title {
     font-size: 37px;
-    margin-bottom: 53px;
+    margin-bottom: 40px;
   }
   .service .service_block .service_btn {
     padding: 16px 35px;
@@ -1009,7 +1024,7 @@
     height: 320px;
   }
   #driver_hero .hero_block .driver_phone {
-    bottom: -95px;
+    bottom: -40px;
     left: 0;
   }
   #driver_hero .driver_hero_item {
@@ -1025,10 +1040,14 @@
   }
   #driver_hero .driver_wrapper {
     margin: 0;
+    position: absolute;
+    bottom: 18px;
+    max-width: 358px;
   }
   .driver_phone > img,
   #driver_hero .hero_left {
     width: 100%;
+    height: 530px;
   }
   .header_logo {
     img {
@@ -1042,10 +1061,13 @@
     gap: 20px;
   }
   .advice1 .item_img img {
-    width: 52%;
+    width: 78%;
+    margin-left: 63px;
   }
   .advice2 .item_img img {
-    width: 44%;
+    margin-top: -29px;
+    width: 87%;
+    margin-bottom: 13px;
   }
   .advice .advice_block .advice_item,
   .advice .advice_block .advice_location {
@@ -1111,8 +1133,9 @@
   }
   .platform .platform_mini_title,
   .secret .secret_title {
-    font-size: 30px;
-    margin-bottom: 40px;
+    font-size: 14px;
+    font-weight: 600;
+    margin-bottom: 20px;
   }
   .platform .platform_block,
   .crm_section .crm_block {
@@ -1201,7 +1224,7 @@
   }
   .crm_section .crm_block .crm_rectangle {
     height: 260px;
-    top: 260px;
+    top: 238px;
     bottom: unset;
   }
   .crm_section .crm_main_top {
@@ -1238,7 +1261,7 @@
     margin-bottom: 0px;
   }
   .extra_item {
-    padding: 15px 44px 15px 20px;
+    padding: 17px 81px;
     align-self: self-start;
     width: 100%;
   }
@@ -1249,7 +1272,7 @@
     border-radius: 20px;
   }
   .safety_section .safety_block .safety_submit_title {
-    margin-bottom: 8px;
+    margin-bottom: 26px;
     padding: 0;
   }
   header .header_block {
@@ -1257,7 +1280,7 @@
   }
   header .header_menus.active {
     width: 95%;
-    height: 546px;
+    height: 620px;
   }
   .service_img img {
     width: 40px;
@@ -1281,6 +1304,8 @@
   footer .right_block .right_block_list li a,
   .document .document_title_block .doc_desc {
     font-size: 16px;
+    width: 100%;
+    text-align: center;
   }
   .tarif .tarif_top {
     align-items: flex-start;
@@ -1301,7 +1326,7 @@
     padding-bottom: 70px;
   }
   .item_img img {
-    width: 68%;
+    width: 100px;
   }
   .advice .advice_top_right {
     flex-direction: column;
@@ -1326,6 +1351,7 @@
   }
   .hero .hero_left {
     padding: 20px;
+    background: linear-gradient(180deg, #1c37b0 0%, #fdfdfd 100%);
   }
   .offer_wrapper .offer_item,
   footer .footer_call .call_form,
@@ -1348,7 +1374,6 @@
     object-fit: cover;
   }
   #mobile_advan_swiper .advan_img img {
-    max-width: 175px;
   }
   footer .footer_call .call_form input {
     height: 60px;
@@ -1370,9 +1395,10 @@
   .hero .hero_right .form_desc,
   .hero .hero_right .right_top_title,
   footer .footer_call .call_form .call_send,
-  footer .footer_call .call_subtitle,
+  footer .footer_call 
   .tarif .tarif_block .tarif_item .tarif_btn a {
     font-size: 16px;
+    padding: 23px 86px;
   }
   footer .footer_call {
     padding-bottom: 40px;

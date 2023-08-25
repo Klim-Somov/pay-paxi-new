@@ -106,7 +106,7 @@
         <div class="swiper-wrapper">
           <Swiper
             class="swiper-cards"
-            :width="350"
+            :width="360"
             :modules="[SwiperAutoplay, SwiperEffectCards]"
             :slides-per-view="1"
             :loop="true"
@@ -148,25 +148,21 @@
                 </div>
               </div>
             </SwiperSlide>
-            <SwiperSlide>
-              <div class="swiper-slide">
-                <!--  -->
-                <div class="advice_location">
-                  <p class="advice_location_desc">
-                    Получить инструкцию по открытию в вашем городе таксопарка
-                  </p>
-                  <div class="location_img">
-                    <img src="../assets/images/advice_location.png" alt="" />
-                  </div>
-                  <div @click="openInstructionModal" class="location_button">
-                    <a>Получить инструкцию</a>
-                  </div>
-                </div>
-              </div>
-            </SwiperSlide>
 
             <!-- useSwiper() within a swiper instance -->
           </Swiper>
+        </div>
+        <!--  -->
+        <div class="advice_location">
+          <p class="advice_location_desc">
+            Получить инструкцию по открытию в вашем городе таксопарка
+          </p>
+          <div class="location_img">
+            <img src="../assets/images/advice_location.png" alt="" />
+          </div>
+          <div @click="openInstructionModal" class="location_button">
+            <a>Получить инструкцию</a>
+          </div>
         </div>
       </div>
 
@@ -1078,7 +1074,6 @@ const openKPModal = () => {
   modalTitle.value = "Получить КП";
   modalText.value = "Заполните форму, и мы отправим вам КП в течение часа";
   isEmail.value = true;
-
 };
 const closeForm = () => {
   isModalOpen.value = false;
@@ -1090,7 +1085,6 @@ const openInstructionModal = () => {
   modalText.value =
     "Заполните форму, и мы отправим вам инструкцию в течение часа";
   isEmail.value = false;
-
 };
 
 const handleModalError = () => {

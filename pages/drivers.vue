@@ -116,7 +116,7 @@
                   <div class="advan_img">
                     <img src="../assets/images/advantages2.png" alt="" />
                   </div>
-                  <p class="advan_name">Прозрачные комиссии</p>
+                  <p class="advan_name">Прозрачные <br/> комиссии</p>
                   <p class="advan_desc">Честные и прозрачные комиссии</p>
                 </div>
               </div>

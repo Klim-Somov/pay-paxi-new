@@ -29,7 +29,7 @@
               <span>Удобство контроля</span> &nbsp; базы входящих заявок
             </p>
             <div class="about_girl">
-              <img src="../assets/images/about_person.svg" alt="" />
+              <img src="../assets/images/crm_bro.svg" alt="" />
             </div>
           </div>
         </div>

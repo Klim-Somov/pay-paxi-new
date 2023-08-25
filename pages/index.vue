@@ -600,7 +600,7 @@
               <span>Удобство контроля</span> &nbsp; базы входящих заявок
             </p>
             <div class="about_girl">
-              <img src="../assets/images/about_person.svg" alt="" />
+              <img src="../assets/images/crm_bro.svg" alt="" />
             </div>
           </div>
         </div>
@@ -671,7 +671,7 @@
               <span>Автоматизируем</span>&nbsp; блокировки
             </p>
             <div class="about_girl">
-              <img src="../assets/images/safety_person.svg" alt="" />
+              <img src="../assets/images/antifrod-face.svg" alt="" />
             </div>
           </div>
           <div class="crm_item2">
@@ -679,7 +679,7 @@
               <span>Отслеживаем</span> &nbsp; аномальное изменение баланса
             </p>
             <div class="about_girl">
-              <img src="../assets/images/safety_person.svg" alt="" />
+              <img src="../assets/images/antifrod-face.svg" alt="" />
             </div>
           </div>
         </div>
@@ -689,7 +689,7 @@
             <span>Оперативно уведомляем</span> &nbsp; о подозрительном случае
           </p>
           <div class="about_girl">
-            <img src="../assets/images/safety_person.svg" alt="" />
+            <img src="../assets/images/antifrod-face.svg" alt="" />
           </div>
         </div>
         <div class="safety_submit">
@@ -1032,10 +1032,10 @@
   <Error v-if="error" />
   <ModalForm
     @close="closeForm"
-    v-if="isModalOpen"
+    :isModalOpen="isModalOpen"
     :title="modalTitle"
     :text="modalText"
-    :inputs="modalInputs"
+    :isEmail="isEmail"
     @error="handleModalError"
     @submit="handleModalSubmit" />
 </template>
@@ -1045,11 +1045,11 @@ const { $csrfFetch } = useNuxtApp();
 const isModalOpen = ref(false);
 const modalTitle = ref("");
 const modalText = ref("");
-const modalInputs = ref([]);
 const succes = ref(false);
 const error = ref(false);
 const name = ref("");
 const phone = ref("");
+const isEmail = ref(false);
 
 const onSubmit = () => {
   if (!name.value || !phone.value) return;
@@ -1073,17 +1073,12 @@ const onSubmit = () => {
   phone.value = "";
 };
 
-
-
 const openKPModal = () => {
   isModalOpen.value = true;
   modalTitle.value = "Получить КП";
   modalText.value = "Заполните форму, и мы отправим вам КП в течение часа";
-  modalInputs.value = [
-    { placeholder: "Имя", value: "" },
-    { placeholder: "Телефон", value: "" },
-    { placeholder: "Почта", value: "" },
-  ];
+  isEmail.value = true;
+
 };
 const closeForm = () => {
   isModalOpen.value = false;
@@ -1094,11 +1089,8 @@ const openInstructionModal = () => {
   modalTitle.value = "Получить инструкцию";
   modalText.value =
     "Заполните форму, и мы отправим вам инструкцию в течение часа";
+  isEmail.value = false;
 
-  modalInputs.value = [
-    { placeholder: "Имя", value: "" },
-    { placeholder: "Телефон", value: "" },
-  ];
 };
 
 const handleModalError = () => {

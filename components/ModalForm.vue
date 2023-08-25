@@ -1,19 +1,53 @@
 <template>
-  <div class="modal-overlay">
-    <div class="modal-form">
+  <div v-if="isModalOpen" class="modal-overlay">
+    <div v-if="isModalOpen" class="modal-overlay" @click="$emit('close')"></div>
+
+    <div id="clickbox" class="modal-form">
       <div class="modal-content">
         <div @click="$emit('close')" class="closer">
           <img src="../assets/images/close.svg" alt="" />
         </div>
         <h2>{{ title }}</h2>
-        <p>{{ text }}</p>
+        <p @focusout="clicOut">{{ text }}</p>
+        <div class="_error" v-if="v$.name.$error">
+          {{ v$.name.$errors[0].$message }}
+        </div>
+
         <input
+          :class="{
+            _error_border: v$.name.$error,
+            '_succes-border ': !v$.name.$invalid,
+          }"
+          @change="v$.name.$touch"
+          v-model="formData.name"
+          placeholder="Имя" />
+
+        <div class="_error" v-if="v$.phone.$error">
+          {{ v$.phone.$errors[0].$message }}
+        </div>
+        <input
+          :class="{
+            _error_border: v$.phone.$error,
+            '_succes-border ': !v$.phone.$invalid,
+          }"
           v-maska
-          :data-maska="maska(input.placeholder)"
-          v-for="(input, index) in inputs"
-          :key="index"
-          v-model="input.value"
-          :placeholder="input.placeholder" />
+          data-maska="+7##########"
+          v-model="formData.phone"
+          placeholder="Телефон" />
+
+        <div class="_error" v-if="v$.email.$error">
+          {{ v$.email.$errors[0].$message }}
+        </div>
+        <input
+          :class="{
+            _error_border: v$.email.$error,
+            '_succes-border ': !v$.email.$invalid,
+          }"
+          @change="v$.email.$touch"
+          v-if="isEmail"
+          v-model="formData.email"
+          placeholder="Почта" />
+
         <a @click="submit">Отправить заявку</a>
         <span
           >Нажимая на кнопку, вы соглашаетесь с «политикой
@@ -25,35 +59,68 @@
 </template>
 
 <script setup>
+import { onMounted, onBeforeUnmount } from "vue";
 import { defineProps, defineEmits } from "vue";
+import { required, helpers, minLength, email } from "@vuelidate/validators";
+import { useVuelidate } from "@vuelidate/core";
 
-const { title, inputs, text } = defineProps(["title", "inputs", "text"]);
-const emit = defineEmits(["submit", "error"]);
+const { title, text, isEmail, isModalOpen } = defineProps([
+  "title",
+  "text",
+  "isEmail",
+  "isModalOpen",
+]);
+const emit = defineEmits(["submit", "error", "close"]);
 
 const { $csrfFetch } = useNuxtApp();
 
-const maska = (v) => {
-  if (v === "Телефон") return "+7##########";
-};
+const formData = reactive({
+  name: "",
+  phone: "",
+  email: "",
+});
+
+const rules = computed(() => {
+  return {
+    name: {
+      required: helpers.withMessage("это поле обязательное", required),
+      minLength: helpers.withMessage("минимум 3 символа", minLength(3)),
+    },
+    email: {
+      email: helpers.withMessage("e-mail некорректный", email),
+      minLength: helpers.withMessage("минимум 3 символа", minLength(3)),
+    },
+    phone: {
+      required: helpers.withMessage("это поле обязательное", required),
+      minLength: helpers.withMessage(
+        "введите номер в формате +7 999 999 99 99",
+        minLength(12)
+      ),
+    },
+  };
+});
+const v$ = useVuelidate(rules, formData);
 
 const submit = () => {
-  if (!inputs[0].value || !inputs[1].value) return;
+  v$.value.$validate();
 
-  $csrfFetch("/api/contact", {
-    method: "POST",
-    body: {
-      from: inputs[0].value,
-      phone: inputs[1].value,
-      email: inputs[2]?.value,
-    },
-  })
-    .then(() => {
-      emit("submit");
+  if (!v$.value.$invalid) {
+    $csrfFetch("/api/contact", {
+      method: "POST",
+      body: {
+        from: formData.name,
+        phone: formData.phone,
+        email: formData.email,
+      },
     })
-    .catch((e) => {
-      emit("error");
-      console.log(e);
-    });
+      .then(() => {
+        emit("submit");
+      })
+      .catch((e) => {
+        emit("error");
+        console.log(e);
+      });
+  }
 };
 </script>
 
@@ -74,6 +141,7 @@ const submit = () => {
 }
 
 .modal-form {
+  z-index: 100;
   margin: 0 20px;
   max-width: 800px;
   border-radius: 50px;

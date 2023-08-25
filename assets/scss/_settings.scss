@@ -116,7 +116,6 @@ a {
   text-decoration: none;
   display: inline-block;
   cursor: pointer;
- 
 }
 /* change colours to suit your needs */
 ins {
@@ -180,7 +179,6 @@ body {
   scroll-behavior: smooth;
   line-height: 1;
 
-
   &.active {
     position: relative;
     height: 150vh;
@@ -197,12 +195,23 @@ body {
     }
   }
 }
+
+._error_border {
+  border: 1px solid #e93f3f !important;
+}
+._succes-border {
+  border: 1px solid #30ab35 !important;
+}
+._error {
+  margin-top: 4px;
+  margin-bottom: 4px;
+  color: #e93f3f;
+}
 .closer {
   position: absolute;
   top: 35px;
   right: 35px;
   cursor: pointer;
-
 }
 .wrapper {
   overflow: hidden;
@@ -237,7 +246,7 @@ body {
     line-height: normal;
     transition: all 0.3s ease;
     &:hover {
-      background:   #e0e0e4 !important;
+      background: #e0e0e4 !important;
     }
   }
 }
@@ -279,7 +288,7 @@ body {
 }
 
 // modal
- .zayavka_modal {
+.zayavka_modal {
   border-radius: 50px;
   background: #222328;
   max-width: 800px;

@@ -40,12 +40,12 @@
           <!--  -->
           <div class="extra_item">
             <div class="extra_img">
-              <img src="../assets/images/app_gallery.svg" alt="" />
+              <img src="../assets/images/google_play.svg" alt="" />
               <div class="active_img">
-                <img src="../assets/images/active_app.svg" alt="" />
+                <img src="../assets/images/active_google.svg" alt="" />
               </div>
             </div>
-            <p class="extra_title">App Gallery</p>
+            <p class="extra_title">Google play</p>
           </div>
           <!--  -->
           <div class="extra_item">
@@ -60,12 +60,12 @@
           <!--  -->
           <div class="extra_item">
             <div class="extra_img">
-              <img src="../assets/images/google_play.svg" alt="" />
+              <img src="../assets/images/app_gallery.svg" alt="" />
               <div class="active_img">
-                <img src="../assets/images/active_google.svg" alt="" />
+                <img src="../assets/images/active_app.svg" alt="" />
               </div>
             </div>
-            <p class="extra_title">Google play</p>
+            <p class="extra_title">App Gallery</p>
           </div>
         </div>
       </div>

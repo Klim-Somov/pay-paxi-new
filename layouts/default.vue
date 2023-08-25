@@ -164,6 +164,7 @@
             <a href="mailto:info@paytaxi.ru" class="footer_mail"
               >info@paytaxi.ru</a
             >
+            
             <div class="footer_right_extra">
               <!--  -->
               <div class="extra_item">

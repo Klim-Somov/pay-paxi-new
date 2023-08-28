@@ -134,7 +134,7 @@
             <Error v-if="error" />
           </div>
         </div>
-        <div class="footer_block">
+        <div class="footer_block d-none d-sm-flex">
           <div class="footer_left">
             <div class="left_block">
               <div class="left_block_img">
@@ -198,6 +198,81 @@
             </div>
           </div>
         </div>
+
+        <div class="footer_block d-flex d-sm-none">
+          <div class="footer_left">
+            <div class="left_block">
+              <div class="left_block_img">
+                <img src="../assets/images/footer_logo.svg" alt="" />
+              </div>
+              <div class="footer_right">
+                <a href="tel:+78002225756" class="footer_tel"
+                  >+7 (800) 222 57-56</a
+                >
+                <a href="mailto:info@paytaxi.ru" class="footer_mail"
+                  >info@paytaxi.ru</a
+                >
+              </div>
+            </div>
+            <div class="right_block">
+              <ul class="right_block_list">
+                <li><a>Стоимость</a></li>
+                <li><a>Обучение бизнесу</a></li>
+                <li><a>Как получать водителей</a></li>
+              </ul>
+            </div>
+          </div>
+          <div class="footer_right">
+            <div class="footer_right_extra">
+              <!--  -->
+              <div class="extra_item">
+                <div class="extra_img">
+                  <img src="../assets/images/app_gallery.svg" alt="" />
+                  <div class="active_img">
+                    <img src="../assets/images/active_app.svg" alt="" />
+                  </div>
+                </div>
+                <p class="extra_title">App Gallery</p>
+              </div>
+              <!--  -->
+              <div class="extra_item">
+                <div class="extra_img">
+                  <img src="../assets/images/app_store.svg" alt="" />
+                  <div class="active_img">
+                    <img src="../assets/images/active_store.svg" alt="" />
+                  </div>
+                </div>
+                <p class="extra_title">App store</p>
+              </div>
+              <!--  -->
+              <div class="extra_item">
+                <div class="extra_img">
+                  <img src="../assets/images/google_play.svg" alt="" />
+                  <div class="active_img">
+                    <img src="../assets/images/active_google.svg" alt="" />
+                  </div>
+                </div>
+                <p class="extra_title">Google play</p>
+              </div>
+            </div>
+            <div class="right_block">
+              <p class="footer_rules">
+                Пользовательское соглашение <br />
+                Политика конфиденциальности
+              </p>
+            </div>
+          </div>
+          <div class="left_block">
+            <p class="left_block_year">© Paytaxi.ru 2023 г.</p>
+
+            <p class="left_cards">
+              ООО «Доступный город» <br />
+              ИНН 6686079161 <br />
+              ОГРН 1169658044742
+            </p>
+          </div>
+        </div>
+
       </div>
     </footer>
   </div>

@@ -64,9 +64,9 @@
                   <!--  -->
                   <div class="extra_item-menu">
                     <div class="extra_img">
-                      <img src="../assets/images/app_gallery.svg" alt="" />
+                      <img src="../assets/images/google_play.svg" alt="" />
                     </div>
-                    <p class="extra_title">App Gallery</p>
+                    <p class="extra_title">Google play</p>
                   </div>
                   <!--  -->
                   <div class="extra_item-menu">
@@ -78,9 +78,9 @@
                   <!--  -->
                   <div class="extra_item-menu">
                     <div class="extra_img">
-                      <img src="../assets/images/google_play.svg" alt="" />
+                      <img src="../assets/images/app_gallery.svg" alt="" />
                     </div>
-                    <p class="extra_title">Google play</p>
+                    <p class="extra_title">App Gallery</p>
                   </div>
                 </div>
               </li>

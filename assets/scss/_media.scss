@@ -14,7 +14,6 @@
   }
   .hero .hero_right .person_img {
     bottom: 10px;
-    right: -25px;
     img {
       width: 70%;
     }
@@ -1126,6 +1125,10 @@
       z-index: 10;
     }
   }
+  .hero .hero_right .person_img {
+    right:10px;
+    }
+  
 
   .platform .platform_mini_title {
     margin-bottom: 20px;
@@ -1405,6 +1408,9 @@
   footer .footer_call .tarif .tarif_block .tarif_item .tarif_btn a {
     font-size: 16px;
     padding: 23px 86px;
+  }
+  .hero .hero_right .right_top_title {
+    padding: 0;
   }
 
   .form_top_title,

@@ -580,7 +580,7 @@
           </p>
         </div>
         <!--  -->
-        <div class="crm_rectangle"></div>
+        <div class="crm_rectangle crm_rectangle2"></div>
         <div class="crm_main_top">
           <!--  -->
           <div class="crm_item1">

@@ -677,7 +677,7 @@
     width: 90%;
   }
   #driver_hero .driver_hero_item .driver_text {
-    font-size: 15px;
+    font-size: 16px;
     line-height: normal;
     padding: 19px;
   }
@@ -1037,10 +1037,8 @@
     margin-bottom: 5px;
   }
   #driver_hero .driver_wrapper {
-    margin: 0;
     position: absolute;
     bottom: 18px;
-    max-width: 358px;
   }
   .driver_phone > img,
   #driver_hero .hero_left {
@@ -1076,6 +1074,11 @@
   .secret .secret_item {
     height: 385px;
   }
+
+  .service .service_block .service_item.service_item1 {
+    margin-top: 120px;
+}
+
   .advice .advice_block .advice_item_desc,
   #driver_hero .driver_hero_bottom .driver_hero_desc,
   .advice .advice_block .location_button a,
@@ -1097,7 +1100,7 @@
   }
   .service .service_title {
     font-size: 30px;
-    margin-bottom: 30px;
+    margin-bottom: 74px;
   }
   .find .find_block .find_right .find_desc,
   .find .find_block .find_right .find_btn a {
@@ -1126,9 +1129,8 @@
     }
   }
   .hero .hero_right .person_img {
-    right:10px;
-    }
-  
+    right: 10px;
+  }
 
   .platform .platform_mini_title {
     margin-bottom: 20px;
@@ -1226,11 +1228,16 @@
   }
   .crm_section .crm_block .crm_rectangle {
     height: 260px;
-    top: 238px;
+    top: 181px;
+    bottom: unset;
+  }
+  .crm_section .crm_block .crm_rectangle2 {
+    height: 260px;
+    top: 229px;
     bottom: unset;
   }
   .crm_section .crm_main_top {
-    margin-top: 270px;
+    margin-top: 267px;
   }
   .extra_img img {
     width: 30px;
@@ -1368,6 +1375,10 @@
   .call_right,
   .footer_right {
     width: 100%;
+  }
+
+  .offer_wrapper .offer_item {
+    width: 78%;
   }
   .hero .hero_left .hero_left_title,
   .hero .hero_left .left_bold_title {

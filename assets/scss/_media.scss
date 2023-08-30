@@ -265,6 +265,10 @@
   .container {
     max-width: 960px;
   }
+
+  .extra_title {
+    white-space: pre-wrap;
+  }
   .find .find_block .find_right .find_btn a {
     padding: 34px 40px;
   }
@@ -1077,7 +1081,7 @@
 
   .service .service_block .service_item.service_item1 {
     margin-top: 120px;
-}
+  }
 
   .advice .advice_block .advice_item_desc,
   #driver_hero .driver_hero_bottom .driver_hero_desc,
@@ -1131,7 +1135,9 @@
   .hero .hero_right .person_img {
     right: 10px;
   }
-
+  .extra_title {
+    white-space: nowrap;
+  }
   .platform .platform_mini_title {
     margin-bottom: 20px;
   }
@@ -1270,7 +1276,7 @@
     margin-bottom: 0px;
   }
   .extra_item {
-    padding: 17px 81px;
+    padding: 17px 58px;
     align-self: self-start;
     width: 100%;
     justify-content: center;
@@ -1457,4 +1463,17 @@
   .secret .secret_block .secret_title {
     font-size: 18px;
   }
+}
+@media (max-width: 355px) {
+  #driver_hero .driver_wrapper {
+    position: absolute;
+    width: 260px;
+  }
+
+
+  #driver_hero .driver_hero_item .driver_text {
+
+    padding: 5px;
+}
+
 }

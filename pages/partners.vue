@@ -402,16 +402,7 @@
               ><div class="swiper-slide">
                 <div class="partner_item">
                   <div class="partner_img">
-                    <img src="../assets/images/partner2.svg" alt="" />
-                  </div>
-                </div>
-              </div>
-            </SwiperSlide>
-            <SwiperSlide
-              ><div class="swiper-slide">
-                <div class="partner_item">
-                  <div class="partner_img">
-                    <img src="../assets/images/partner3.svg" alt="" />
+                    <img src="../assets/images/tochkaH.svg" alt="" />
                   </div>
                 </div>
               </div>
@@ -420,16 +411,7 @@
               <div class="swiper-slide">
                 <div class="partner_item">
                   <div class="partner_img">
-                    <img src="../assets/images/partner4.svg" alt="" />
-                  </div>
-                </div>
-              </div>
-            </SwiperSlide>
-            <SwiperSlide>
-              <div class="swiper-slide">
-                <div class="partner_item">
-                  <div class="partner_img">
-                    <img src="../assets/images/partner5.svg" alt="" />
+                    <img src="../assets/images/tkb-h.svg" alt="" />
                   </div>
                 </div></div
             ></SwiperSlide>
@@ -441,19 +423,24 @@
                   </div>
                 </div></div
             ></SwiperSlide>
+            <SwiperSlide>
+              <div class="swiper-slide">
+                <div class="partner_item">
+                  <div class="partner_img">
+                    <img
+                      src="../assets/images/Rocket-Work-Logo-Main-H.svg"
+                      alt="" />
+                  </div>
+                </div></div
+            ></SwiperSlide>
 
+            <!-- useSwiper() within a swiper instance -->
             <SwiperControls />
           </Swiper>
         </div>
-
-        <span
-          class="swiper-notification"
-          aria-live="assertive"
-          aria-atomic="true"></span>
       </div>
 
-      <div
-        class="partner_block d-none d-sm-flex swiper-initialized swiper-horizontal swiper-backface-hidden">
+      <div class="partner_block d-none d-sm-flex">
         <div class="partner_item">
           <div class="partner_img">
             <div class="partner_img_active">
@@ -468,47 +455,23 @@
         <div class="partner_item">
           <div class="partner_img">
             <div class="partner_img_active">
-              <img src="../assets/images/partner2.svg" alt="" />
+              <img src="../assets/images/tochkaH.svg" alt="" />
             </div>
-            <img
-              class="no_active"
-              src="../assets/images/partner_n2.svg"
-              alt="" />
+            <img class="no_active" src="../assets/images/tochka.svg" alt="" />
           </div>
         </div>
         <div class="partner_item">
           <div class="partner_img">
             <div class="partner_img_active">
-              <img src="../assets/images/partner3.svg" alt="" />
+              <img src="../assets/images/Rocket-Work-Logo-Main-H.svg" alt="" />
             </div>
             <img
               class="no_active"
-              src="../assets/images/partner_n3.svg"
+              src="../assets/images/Rocket-Work-Logo-Main.svg"
               alt="" />
           </div>
         </div>
-        <div class="partner_item">
-          <div class="partner_img">
-            <div class="partner_img_active">
-              <img src="../assets/images/partner4.svg" alt="" />
-            </div>
-            <img
-              class="no_active"
-              src="../assets/images/partner_n4.svg"
-              alt="" />
-          </div>
-        </div>
-        <div class="partner_item">
-          <div class="partner_img">
-            <div class="partner_img_active">
-              <img src="../assets/images/partner5.svg" alt="" />
-            </div>
-            <img
-              class="no_active"
-              src="../assets/images/partner_n5.svg"
-              alt="" />
-          </div>
-        </div>
+
         <div class="partner_item">
           <div class="partner_img">
             <div class="partner_img_active">
@@ -518,6 +481,14 @@
               class="no_active"
               src="../assets/images/partner_n6.svg"
               alt="" />
+          </div>
+        </div>
+        <div class="partner_item">
+          <div class="partner_img">
+            <div class="partner_img_active">
+              <img src="../assets/images/tkb-h.svg" alt="" />
+            </div>
+            <img class="no_active" src="../assets/images/tkb.svg" alt="" />
           </div>
         </div>
       </div>
@@ -535,15 +506,12 @@
   </section>
 </template>
 <script setup>
-
 const isModalOpen = ref(false);
 const modalTitle = ref("");
 const modalText = ref("");
 const modalInputs = ref([]);
 const succes = ref(false);
 const error = ref(false);
-
-
 
 const openKPModal = () => {
   isModalOpen.value = true;
@@ -559,7 +527,6 @@ const openKPModal = () => {
 const closeForm = () => {
   isModalOpen.value = false;
 };
-
 
 const handleModalError = () => {
   error.value = true;

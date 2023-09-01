@@ -303,16 +303,7 @@
               ><div class="swiper-slide">
                 <div class="partner_item">
                   <div class="partner_img">
-                    <img src="../assets/images/partner2.svg" alt="" />
-                  </div>
-                </div>
-              </div>
-            </SwiperSlide>
-            <SwiperSlide
-              ><div class="swiper-slide">
-                <div class="partner_item">
-                  <div class="partner_img">
-                    <img src="../assets/images/partner3.svg" alt="" />
+                    <img src="../assets/images/tochkaH.svg" alt="" />
                   </div>
                 </div>
               </div>
@@ -321,16 +312,7 @@
               <div class="swiper-slide">
                 <div class="partner_item">
                   <div class="partner_img">
-                    <img src="../assets/images/partner4.svg" alt="" />
-                  </div>
-                </div>
-              </div>
-            </SwiperSlide>
-            <SwiperSlide>
-              <div class="swiper-slide">
-                <div class="partner_item">
-                  <div class="partner_img">
-                    <img src="../assets/images/partner5.svg" alt="" />
+                    <img src="../assets/images/tkb-h.svg" alt="" />
                   </div>
                 </div></div
             ></SwiperSlide>
@@ -339,6 +321,14 @@
                 <div class="partner_item">
                   <div class="partner_img">
                     <img src="../assets/images/partner6.svg" alt="" />
+                  </div>
+                </div></div
+            ></SwiperSlide>
+            <SwiperSlide>
+              <div class="swiper-slide">
+                <div class="partner_item">
+                  <div class="partner_img">
+                    <img src="../assets/images/Rocket-Work-Logo-Main-H.svg" alt="" />
                   </div>
                 </div></div
             ></SwiperSlide>
@@ -363,47 +353,26 @@
         <div class="partner_item">
           <div class="partner_img">
             <div class="partner_img_active">
-              <img src="../assets/images/partner2.svg" alt="" />
+              <img src="../assets/images/tochkaH.svg" alt="" />
             </div>
             <img
               class="no_active"
-              src="../assets/images/partner_n2.svg"
+              src="../assets/images/tochka.svg"
               alt="" />
           </div>
         </div>
         <div class="partner_item">
           <div class="partner_img">
             <div class="partner_img_active">
-              <img src="../assets/images/partner3.svg" alt="" />
+              <img src="../assets/images/Rocket-Work-Logo-Main-H.svg" alt="" />
             </div>
             <img
               class="no_active"
-              src="../assets/images/partner_n3.svg"
+              src="../assets/images/Rocket-Work-Logo-Main.svg"
               alt="" />
           </div>
         </div>
-        <div class="partner_item">
-          <div class="partner_img">
-            <div class="partner_img_active">
-              <img src="../assets/images/partner4.svg" alt="" />
-            </div>
-            <img
-              class="no_active"
-              src="../assets/images/partner_n4.svg"
-              alt="" />
-          </div>
-        </div>
-        <div class="partner_item">
-          <div class="partner_img">
-            <div class="partner_img_active">
-              <img src="../assets/images/partner5.svg" alt="" />
-            </div>
-            <img
-              class="no_active"
-              src="../assets/images/partner_n5.svg"
-              alt="" />
-          </div>
-        </div>
+    
         <div class="partner_item">
           <div class="partner_img">
             <div class="partner_img_active">
@@ -412,6 +381,17 @@
             <img
               class="no_active"
               src="../assets/images/partner_n6.svg"
+              alt="" />
+          </div>
+        </div>
+        <div class="partner_item">
+          <div class="partner_img">
+            <div class="partner_img_active">
+              <img src="../assets/images/tkb-h.svg" alt="" />
+            </div>
+            <img
+              class="no_active"
+              src="../assets/images/tkb.svg"
               alt="" />
           </div>
         </div>
